@@ -1,9 +1,9 @@
 import {Route, Routes} from "react-router-dom"
-import Home from './pages/home'
-import Documento from './pages/documento'
-import Usuarios from './pages/usuarios'
-import CambiarContraseña from './pages/cambiarContraseña'
-import Login from './pages/login'
+import Home from './pages/Home'
+import Usuarios from './pages/Usuarios'
+import CambiarContraseña from './pages/CambiarContraseña'
+import Login from './pages/Login'
+import Documento from "./pages/Documento"
 
 function App() {
   return (
