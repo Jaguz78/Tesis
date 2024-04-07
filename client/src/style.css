@@ -6,10 +6,6 @@
     background-color: #27AE60;
 }
 
-.nav li .selected{
-    color: white;
-}
-
 .nav li:hover{
     color: white;
 }

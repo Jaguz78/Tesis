@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 export default function Navbar() {
   return (
@@ -19,7 +19,6 @@ export default function Navbar() {
         </li>
       </ul>
 
-
       <ul className="flex mx-5 space-x-7">
         <li>
           <NavLink to='/cambiarContraseña' style={({ isActive }) => {
@@ -31,8 +30,6 @@ export default function Navbar() {
           </button>
         </li>
       </ul>
-
-
     </div>
   )
 }
