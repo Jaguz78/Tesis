@@ -9,3 +9,37 @@
 .nav li:hover{
     color: white;
 }
+
+.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.title2 {
+  text-align: left;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.title3 {
+  text-align: left;
+  font-weight: bold;
+  font-size: 12px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.title4 {
+  text-align: left;
+  font-weight: bold;
+  font-size: 12px;
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+}
+.paragraph {
+  font-size: 12px;
+  font-family: "Times New Roman", Times, serif;
+}
