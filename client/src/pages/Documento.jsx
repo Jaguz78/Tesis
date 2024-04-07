@@ -7,35 +7,14 @@ function Documento() {
     const [data, setData] = useState('')
 
     const validateData = _ => {
-        let response = {
-            data: data.trim(),
-        }
+        let error = null
         if (format === 'title' || format === 'title2' || format === 'title3' || format === 'title4') {
-            if (data.length >= 48)  response.error = "Muy largo"
+            if (data.length >= 48)  error = "Los titulos o subtitulos no deben exceder de 48 carácteres"
         }
 
-        if (format === 'title2' || format === 'title3' || format === 'title4') {
-            response.data = data.charAt(0).toUpperCase() + data.slice(1).toLowerCase()
-        }
-
-        if (format === 'paragraph'){
-            const parrafos = data.split('\n');
-            const parrafosCapitalizados = parrafos.map(parrafo => {
-                // Si el párrafo está vacío, regresamos una cadena vacía
-                if (!parrafo.trim()) return "";
-            
-                    if (data.length <= 350) response.error = "Demasiado corto"
-                    if (data.length >= 850) response.error = "Demasiado largo"
-
-                // Capitalizamos la primera letra del párrafo y la unimos con el resto de la cadena en minúsculas
-                return parrafo.charAt(0).toUpperCase() + parrafo.slice(1).toLowerCase();
-              });
-              response.data = parrafosCapitalizados
-        }
-
-        if (format === '') response.error = "Debe seleccionar un formato"
-        console.log(response)
-        return response
+        if (format === '') error = "Debe seleccionar un formato"
+        console.log(error)
+        return error
     }
 
     return (
