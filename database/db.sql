@@ -70,8 +70,8 @@ insert into asesor (id_asesor, nombre, id_usuario, state) values
 insert into estudiante (id_estudiante, id_usuario, sede, nombre, carrera) values
 	(1, '202146223', 'Centro Universitario del Norte', 'Edgar Gonzalez', 'Ingenierira en Ciencias y Sistemas');
 insert into formato (nombre_seccion, tamaño_fuente, mayuscula, cursiva, negrita, alineacion, max_caracteres) values
-	('Primer nivel', 14, true, false, true, 'centrado', 48),
-    ('Segundo nivel', 12, false, false, true, 'izquierdo', 48),
-    ('Tercer nivel', 12, false, false, true, 'izquierdo', 48),
-    ('Cuarto nivel', 12, false, true, true, 'izquierdo', 48),
-    ('Quinto nivel', 12, false, true, true, 'izquierdo', 48);
+	('Titulo 1', 14, true, false, true, 'centrado', 48),
+    ('Titulo 2', 14, false, false, true, 'izquierda', 48),
+    ('Titulo 3', 12, false, false, true, 'izquierda', 48),
+    ('Titulo 4', 12, false, true, true, 'izquierda', 48),
+    ('Parrafo', 12, false, false, false, 'justificado', null);
