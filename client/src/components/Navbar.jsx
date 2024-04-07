@@ -20,7 +20,7 @@ export default function Navbar() {
       </ul>
 
       <ul className="flex mx-5 space-x-7">
-        <li>
+        <li className="text-sm py-1.5">
           <NavLink to='/cambiarContraseña' style={({ isActive }) => {
           return isActive ? { color: "white" } : {};}}>Cambiar Contraseña</NavLink>
         </li>
