@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 .bg-my-green {
-  background-color: #27ae60;
+    background-color: #27AE60;
+}
+
+.nav li:hover{
+    color: white;
 }
 
 .title {

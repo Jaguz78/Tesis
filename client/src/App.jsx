@@ -4,10 +4,14 @@ import Usuarios from './pages/Usuarios'
 import CambiarContraseña from './pages/CambiarContraseña'
 import Login from './pages/Login'
 import Documento from "./pages/Documento"
+import Navbar from "./components/Navbar"
 
 function App() {
   return (
     
+    <>
+    <Navbar />
+
     <Routes>
       <Route path="/"  element={<Home />} />
       <Route path="/documento"  element={<Documento />} />
@@ -15,6 +19,7 @@ function App() {
       <Route path="/cambiarContraseña"  element={<CambiarContraseña />} />
       <Route path="/login"  element={<Login />} />
     </Routes>
+    </>
     
   )
 }
