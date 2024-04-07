@@ -52,7 +52,7 @@ function Documento() {
                     <button className='p-3 bg-my-green text-white rounded-lg'>Imprimir PDF</button>
                 </div>
             </section>
-            <section className='mt-4 w-full h-[75vh] flex flex-row justify-between'>
+            <section className='mt-4 w-full h-[70vh] flex flex-row justify-between'>
                 <div className='w-[48%] h-full border-2 border-gray-600 rounded-2xl p-4 flex flex-col shadow-xl'>
                     <textarea onChange={(e) => setData(e.target.value)} name="inputTextarea" id="inputTextarea" className='w-full h-[90%] rounded-lg p-2 border-0 focus:outline-none' placeholder='Escribe aquí...'></textarea>
                     <button onClick={validateData} className='w-24 p-3 bg-my-green text-white rounded-lg mt-4 self-end'>Agregar</button>
