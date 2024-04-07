@@ -1,20 +1,19 @@
 import {Route, Routes} from "react-router-dom"
-import home from './pages/home'
-import documento from './pages/documento'
-import usuarios from './pages/usuarios'
-import cambiarContraseña from './pages/cambiarContraseña'
-import login from './pages/login'
-import Formatter from './pages/Formatter'
+import Home from './pages/home'
+import Documento from './pages/documento'
+import Usuarios from './pages/usuarios'
+import CambiarContraseña from './pages/cambiarContraseña'
+import Login from './pages/login'
 
 function App() {
   return (
     
     <Routes>
-      <Route path="/"  element={<home />} />
-      <Route path="/documento"  element={<Formatter />} />
-      <Route path="/usuarios"  element={<usuarios />} />
-      <Route path="/cambiarContraseña"  element={<cambiarContraseña />} />
-      <Route path="/login"  element={<login />} />
+      <Route path="/"  element={<Home />} />
+      <Route path="/documento"  element={<Documento />} />
+      <Route path="/usuarios"  element={<Usuarios />} />
+      <Route path="/cambiarContraseña"  element={<CambiarContraseña />} />
+      <Route path="/login"  element={<Login />} />
     </Routes>
     
   )
