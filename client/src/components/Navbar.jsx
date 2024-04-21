@@ -8,7 +8,7 @@ export default function Navbar() {
       <ul className="flex mx-5 space-x-7 ">       
         <NavElement nombre={'Home'} ruta={'./'}/>
         <NavElement nombre={'Documento'} ruta={'/documento'} />
-        <NavElement nombre={'Usuarios'} ruta={'/usuario'} />
+        <NavElement nombre={'Usuarios'} ruta={'/usuarios'} />
       </ul>
       <ul className="flex mx-5 space-x-7">
         <NavElement clase="text-sm py-1.5" nombre={'Cambiar Contraseña' } ruta={'/cambiarContraseña'}/>

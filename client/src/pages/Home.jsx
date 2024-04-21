@@ -75,8 +75,9 @@ export default function Home() {
         
         <button className='end-0 w-[15%] p-2 bg-my-green text-white rounded-lg '>Publicar Tesis</button>      
       </div>
-      
-      <Tabla headers={headers} data={records}/>
+      <div className='mt-10 mx-auto w-[90%]'>        
+        <Tabla headers={headers} data={records}/>
+      </div>
     </div>
     
   )
