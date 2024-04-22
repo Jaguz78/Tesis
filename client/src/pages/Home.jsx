@@ -70,7 +70,7 @@ export default function Home() {
     <div className='block'>  
       <div className='mt-10 m-auto flex w-[90%] justify-between'>
         <input 
-        className='w-[80%] border-2 border-gray-600 rounded-2xl p-2  shadow-xl ' placeholder='Buscar...' 
+        className='w-[80%] border-2 border-gray-600 rounded-2xl p-2  shadow-sm ' placeholder='Buscar...' 
         onChange={handleFilter}/>
         
         <button className='end-0 w-[15%] p-2 bg-my-green text-white rounded-lg '>Publicar Tesis</button>      
