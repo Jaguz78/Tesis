@@ -1,6 +1,7 @@
 import '../style.css'
 import FormatButton from '../components/FormatButton'
 import {useState} from 'react'
+import Seccion from '../components/Seccion';
 
 function Documento() {
     const [format, setFormat] = useState('');
@@ -37,6 +38,13 @@ function Documento() {
                     <button onClick={validateData} className='w-24 p-3 bg-my-green text-white rounded-lg mt-4 self-end'>Agregar</button>
                 </div>
                 <div className='w-[48%] h-full border-2 border-gray-600 rounded-2xl p-4 flex flex-col shadow-xl'>
+                
+                {/* Ejmplos de secciones */}
+                <Seccion data='Titulo' formato={'title'}/>
+                <Seccion data='Titulo 2' formato={'title2'}/>
+                <Seccion data='Titulo 3' formato={'title3'}/>
+                <Seccion data='Titulo 4' formato={'title4'}/>
+                <Seccion data='Parrafo de prueba' formato={'paragraph'}/>
 
                 </div>
             </section>
