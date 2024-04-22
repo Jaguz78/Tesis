@@ -1,5 +1,6 @@
 import '../style.css'
 import FormatButton from '../components/FormatButton'
+
 import Section from '../components/Section'
 import {useState, useEffect} from 'react'
 import {getSections, createSection} from '../api/documento.api'
@@ -85,6 +86,7 @@ function Documento() {
                     <textarea onChange={(e) => setData(e.target.value)} name="inputTextarea" id="inputTextarea" className='w-full h-[90%] rounded-lg p-2 border-0 focus:outline-none' placeholder='Escribe aquí...'></textarea>
                     <button onClick={agregar} className='w-24 p-3 bg-my-green text-white rounded-lg mt-4 self-end'>Agregar</button>
                 </div>
+
                 <div className='w-[48%] h-full border-2 border-gray-600 rounded-2xl p-4 flex flex-col shadow-xl overflow-y-scroll'>
                     {
                         sections.map(s => <Section format={s.id_formato} key={s.id_seccion} id={s.id_seccion} sections={sections} setSections={setSections}>{s.valor}</Section>)
