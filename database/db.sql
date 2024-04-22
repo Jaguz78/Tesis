@@ -49,8 +49,7 @@ create table if not exists formato(
 create table if not exists seccion(
 	id_seccion int primary key auto_increment,
     valor longtext,
-    posterior int,
-    anterior int,
+    posicion int,
     id_formato int,
     constraint `FK_SeccionFormato` foreign key (`id_formato`) references `formato` (`id_formato`)
 );
