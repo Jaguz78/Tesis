@@ -4,7 +4,7 @@ import NavElement from "./NavElement";
 
 export default function Navbar() {
   return (
-    <div className="nav bg-zinc-900 py-5 flex text-gray-400 place-content-between font-bold text-lg">
+    <div className="nav bg-zinc-900 py-5 flex text-gray-400 place-content-between font-bold text-lg shadow-xl">
       <ul className="flex mx-5 space-x-7 ">       
         <NavElement nombre={'Home'} ruta={'./'}/>
         <NavElement nombre={'Documento'} ruta={'/documento'} />
