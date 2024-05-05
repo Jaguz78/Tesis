@@ -1,15 +1,14 @@
 import React from 'react'
-import {Form, Formik} from "formik"
+import { Form, Formik } from 'formik'
 
-export default function TaskForm(elementos) {
+export default function ChangePassForm() {
   return (
-    <Formik 
+      <Formik 
             initialValues={{
                 carné: "",
-                sede:"",
-                nombre:"",
-                carrera:"",
-                contraseña:""
+                cActual:"",
+                cNueva:"",
+                nuevaRepetida:""
             }} 
             onSubmit={(values)=>{
                 console.log(values)
@@ -28,41 +27,34 @@ export default function TaskForm(elementos) {
                         />
                     </div>
                     <div className='mb-5'>
-                        <label className='font-bold'>Sede: </label>
-                        <input  
-                        className='w-[100%] block h-full border-2 border-gray-600 rounded-xl p-2 '                        
-                        type='text'
-                        name='sede'
-                        placeholder='Centro Universitario del Norte'
-                        onChange={handleChange}
-                        />
-                    </div>
-                    <div className='mb-5'>
-                        <label className='font-bold'>Nombre: </label>
-                        <input  
-                        className='w-[100%] block h-full border-2 border-gray-600 rounded-xl p-2 '                        
-                        type='text'
-                        name='nombre'
-                        placeholder='Juan Peréz'
-                        onChange={handleChange}
-                        />
-                    </div>
-                    <div className='mb-5'>
-                        <label className='font-bold'>Carrera: </label>
-                        <input  
-                        className='w-[100%] block h-full border-2 border-gray-600 rounded-xl p-2 '                        
-                        type='text'
-                        name='carrera'
-                        placeholder='Medicina'
-                        onChange={handleChange}
-                        />
-                    </div>
-                    <div className='mb-5'>
-                        <label className='font-bold'>Contraseña: </label>
+                        <label className='font-bold'>Contraseña Actual: </label>
                         <input  
                         className='w-[100%] block h-full border-2 border-gray-600 rounded-xl p-2 '                        
                         type='password'
-                        name='contraseña'
+                        name='cActual'
+                        placeholder='...'
+                        onChange={handleChange}
+                        />
+                    </div>
+                    
+                    <div className='mb-5'>
+                        <label className='font-bold'>Contraseña Nueva: </label>
+                        <input  
+                        className='w-[100%] block h-full border-2 border-gray-600 rounded-xl p-2 '                        
+                        type='password'
+                        name='cNueva'
+                        placeholder='...'
+                        onChange={handleChange}
+                        />
+                    </div>
+                    
+                    <div className='mb-5'>
+                        <label className='font-bold'>Repita su Contraseña: </label>
+                        <input  
+                        className='w-[100%] block h-full border-2 border-gray-600 rounded-xl p-2 '                        
+                        type='password'
+                        name='nuevaRepetida'
+                        placeholder='...'
                         onChange={handleChange}
                         />
                     </div>
@@ -71,5 +63,5 @@ export default function TaskForm(elementos) {
                 </Form>
             )}
         </Formik>
-    )         
+  )
 }

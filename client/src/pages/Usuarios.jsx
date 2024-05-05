@@ -1,6 +1,6 @@
 import H2 from "../components/H2"
 import Tabla from "../components/Tabla"
-import TaskForm from "../components/TaskForm1"
+import StudentForm from "../components/StundentForm"
 
 export default function Usuarios() {
   const headers = [
@@ -51,7 +51,7 @@ export default function Usuarios() {
       <H2 name={'Estudiantes'} />
       <div className="flex justify-between ">
         <div className=' mx-auto w-[30%] border-2 border-gray-600 rounded-2xl p-4 shadow-xl'>
-        <TaskForm></TaskForm>
+        <StudentForm></StudentForm>
         </div>
         <div className=" mx-auto w-[60%]">
           <Tabla headers={headers} data={data}></Tabla>
