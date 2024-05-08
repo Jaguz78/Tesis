@@ -2,15 +2,11 @@ create database if not exists proyecto;
 use proyecto;
 create table if not exists junta(
 	id_junta int primary key auto_increment,
-    fecha date
-);
-create table if not exists detalle_junta(
-	id_detalle_junta int primary key auto_increment,
-    id_junta int,
     grupo varchar(250),
-    puesto varchar(250),
+    rol varchar(250),
+    profesion varchar(250),
     nombre varchar(250),
-    constraint `FK_DetalleJunta` foreign key (`id_junta`) references `junta` (`id_junta`)
+    año varchar(100)
 );
 create table if not exists usuario(
 	id_usuario varchar(50) primary key,
@@ -33,8 +29,7 @@ create table if not exists tesis(
     id_estudiante int,
     state boolean,
     id_junta int,
-    constraint `FK_TesisUsuario` foreign key (`id_estudiante`) references `estudiante` (`id_estudiante`),
-    constraint `FK_TesisJunta` foreign key (`id_junta`) references `junta` (`id_junta`)
+    constraint `FK_TesisUsuario` foreign key (`id_estudiante`) references `estudiante` (`id_estudiante`)
 );
 create table if not exists formato(
 	id_formato int primary key auto_increment,
