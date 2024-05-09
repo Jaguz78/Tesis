@@ -1,6 +1,11 @@
 import React from 'react'
 import InputField from '../components/InputField'
+<<<<<<< HEAD
 import {changePassword} from '../api/login.api'
+=======
+import { Form, Formik } from 'formik'
+import ChangePassForm from '../components/ChangePassForm'
+>>>>>>> 791b3486aa30b017c2f858d8374024ca2b6a67d3
 
 export default function CambiarContraseña() {
 
@@ -12,6 +17,7 @@ export default function CambiarContraseña() {
 
   return (
     <div className='my-7 m-auto w-[30%] h-full border-2 border-gray-600 rounded-2xl p-4 shadow-xl flex' >
+<<<<<<< HEAD
 
       <form className='w-[90%] m-auto block '>
 
@@ -27,6 +33,9 @@ export default function CambiarContraseña() {
         className='my-3 w-[100%] p-2 bg-my-green text-white rounded-lg '>Cambiar Contraseña</button> 
       </form>
       
+=======
+      <ChangePassForm></ChangePassForm>
+>>>>>>> 791b3486aa30b017c2f858d8374024ca2b6a67d3
     </div>
   )
 }
