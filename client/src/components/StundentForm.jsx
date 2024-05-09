@@ -1,18 +1,25 @@
 import React from "react";
 import { Form, Formik } from "formik";
 import { createStudent } from "../api/estudiantes.api";
+import * as Yup from "yup";
 
-export default function StudentForm(elementos) {
+const studentSchema = Yup.object().shape({
+  carné: Yup.string().required("Required"),
+  sede: Yup.string().required("Required"),
+  nombre: Yup.string().required("Required"),
+  carrera: Yup.string().required("Required"),
+  contraseña: Yup.string().required("Required"),
+});
+
+export default function StudentForm() {
   const handleSubmit = async (v) => {
     try {
       const response = await createStudent(v);
       console.log(response);
     } catch (e) {
       console.log("errorsote: " + e.message);
-      alert("No tienes permisos para realizar esta acción");
     }
   };
-
   return (
     <Formik
       initialValues={{
@@ -22,6 +29,7 @@ export default function StudentForm(elementos) {
         carrera: "",
         contraseña: "",
       }}
+      validationSchema={studentSchema}
       onSubmit={(values) => {
         console.log(values);
         handleSubmit(values);
