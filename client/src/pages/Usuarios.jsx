@@ -1,6 +1,7 @@
 import H2 from "../components/H2"
 import Tabla from "../components/Tabla"
 import StudentForm from "../components/StundentForm"
+import JDirectivaForm from "../components/JDirectivaForm"
 
 export default function Usuarios() {
   const headers = [
@@ -58,7 +59,17 @@ export default function Usuarios() {
         </div>
       </div>
     </div>
-
+    
+    <div className="mb-20 mt-10" >
+      <H2 name={'Junta Directiva'} />
+      <div className="flex justify-between ">
+        <div className=' mx-auto w-[30%] border-2 border-gray-600 rounded-2xl p-4 shadow-xl'>
+        <JDirectivaForm></JDirectivaForm>
+        </div>
+        <div className=" mx-auto w-[60%]">
+        </div>
+      </div>
+    </div>
     </>
   )
 }

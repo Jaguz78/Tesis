@@ -41,6 +41,20 @@ export default function Home() {
       titulo:'Construcción',
       año: '2018',
       estado:'Finalizada'
+    },
+    {
+      id:3,
+      estudiante: 'Juan Perez',
+      titulo:'Software',
+      año: '2020',
+      estado:'Finalizada'
+    },
+    {
+      id:4,
+      estudiante: 'Sofia Gómez',
+      titulo:'Construcción',
+      año: '2018',
+      estado:'Finalizada'
     }
   ]
 
