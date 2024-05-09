@@ -2,14 +2,20 @@ import jwt from "jsonwebtoken";
 
 function verificarToken(req, res, next) {
   const token = req.headers["authorization"];
+  console.log(token);
+  let tokenSinBearer;
+  if (token) {
+    tokenSinBearer = token.split(" ")[1];
+    console.log(tokenSinBearer);
+  }
 
-  if (!token) {
+  if (!tokenSinBearer) {
     return res
       .status(403)
       .send({ auth: false, message: "Token no proporcionado." });
   }
 
-  jwt.verify(token, process.env.JWT_SECRET, function (err, decoded) {
+  jwt.verify(tokenSinBearer, process.env.JWT_SECRET, function (err, decoded) {
     if (err) {
       return res
         .status(500)
@@ -17,7 +23,7 @@ function verificarToken(req, res, next) {
     }
 
     // Si el token es válido, se decodifica y se adjunta a la solicitud para su uso posterior
-    req.id_usuario = decoded.id_usuario;
+    req.rol = decoded.rol;
     next();
   });
 }

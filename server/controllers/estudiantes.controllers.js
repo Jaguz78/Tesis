@@ -2,6 +2,7 @@ import { pool } from "../db.js";
 
 const createStudent = async (req, res) => {
   const { carné, sede, nombre, carrera, contraseña } = req.body;
+  console.log(req.rol);
   try {
     // Realizar la primera consulta para insertar el usuario
     const [result] = await pool.query(
