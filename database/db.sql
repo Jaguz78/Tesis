@@ -14,7 +14,7 @@ create table if not exists usuario(
     rol varchar(100)
 );
 create table if not exists estudiante(
-	id_estudiante int primary key,
+	id_estudiante int primary key auto_increment,
     id_usuario varchar(50),
     sede varchar(250),
     nombre varchar(100),
@@ -23,12 +23,11 @@ create table if not exists estudiante(
 );
 create table if not exists tesis(
 	id_tesis int primary key auto_increment,
-    fecha date,
+    fecha varchar(100),
     titulo varchar(250),
     enlace_pdf text,
     id_estudiante int,
-    state boolean,
-    id_junta int,
+    state boolean
     constraint `FK_TesisUsuario` foreign key (`id_estudiante`) references `estudiante` (`id_estudiante`)
 );
 create table if not exists formato(
