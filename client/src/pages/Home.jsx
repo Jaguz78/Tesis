@@ -5,56 +5,77 @@ export default function Home() {
 
   const headers = [
     {
-      name:'Estudiante',
-      selector: row=>row.estudiante,
+      name:'Fecha',
+      selector: row=>row.fecha,
       sortable: true
     },
     {
-      name:'Titulo',
+      name:'Título',
       selector: row=>row.titulo,
       sortable: true
-    },
+    },    
     {
-      name:'Año',
-      selector: row=>row.año,
+      name:'Sede',
+      selector: row=>row.sede,
       sortable: true
-    },
-    
+    },    
     {
-      name:'Estado',
-      selector: row=>row.estado,
+      name:'Carrera',
+      selector: row=>row.carrera,
       sortable: true
+    },    
+    {
+      name:'Nombre',
+      selector: row=>row.nombre,
+      sortable: true
+    },  
+    {
+      name: "PDF",
+      cell: (row) => (
+        <button
+          className="text-blue-500"
+          onClick={() => {
+            //navigate("/facturas/detalle", { state: { data: row.id } });
+          }}
+        >
+          Generar PDF
+        </button>
+      ),
     }
   ]
 
   const data =[
     {
-      id:1,
-      estudiante: 'Juan Perez',
+      id_tesis:1,
+      nombre: 'Juan Perez',
       titulo:'Software',
-      año: '2020',
-      estado:'En revisión'
+      sede:'CUNOC',
+      carrera:'Sistemas',
+      fecha:'2021'
     },
     {
-      id:2,
-      estudiante: 'Sofia Gómez',
+      id_tesis:2,
+      nombre: 'Sofia Gómez',
       titulo:'Construcción',
-      año: '2018',
-      estado:'Finalizada'
+      sede:'CUNOR',
+      carrera:'Civil',
+      fecha:'2018'
     },
     {
-      id:3,
-      estudiante: 'Juan Perez',
+      id_tesis:3,
+      nombre: 'Jose Perez',
       titulo:'Software',
-      año: '2020',
-      estado:'Finalizada'
+      sede:'CUNOR',
+      carrera:'Sistemas',
+      fecha:'2021'
     },
     {
-      id:4,
-      estudiante: 'Sofia Gómez',
+      id_tesis:4,
+      nombre: 'Ana Gómez',
       titulo:'Construcción',
-      año: '2018',
-      estado:'Finalizada'
+      sede:'CENTRAL',
+      carrera:'Medicina',
+      fecha:'2020'
     }
 
   ]
@@ -67,64 +88,74 @@ export default function Home() {
     i=i.split(",")
     if(i.length==1){
     newData = data.filter(row =>{
-    let estudiante = row.estudiante.toLowerCase().includes(i)
-    let titulo = row.titulo.toLowerCase().includes(i)
-    let año = row.año.toLowerCase().includes(i)
-    let estado = row.estado.toLowerCase().includes(i)
-    if(estudiante){
-      return estudiante
+    let nombre = row.nombre.toLowerCase().includes(i[0])
+    let titulo = row.titulo.toLowerCase().includes(i[0])
+    let sede = row.sede.toLowerCase().includes(i[0])
+    let carrera = row.carrera.toLowerCase().includes(i[0])
+    let fecha = row.fecha.toLowerCase().includes(i[0])
+    
+    if(nombre){
+      return nombre
     }else if(titulo){
       return titulo
-    }else if(año){
-      return año
+    }else if(sede){
+      return sede
+    }else if(fecha){
+      return fecha
     }else{
-      return estado
+      return carrera
     }       
     })
   }else if(i.length>1){
       newData = data.filter(row =>{
-      let estudiante = row.estudiante.toLowerCase().includes(i[0].trim())
+      let nombre = row.nombre.toLowerCase().includes(i[0].trim())
       let titulo = row.titulo.toLowerCase().includes(i[0].trim())
-      let año = row.año.toLowerCase().includes(i[0].trim())
-      let estado = row.estado.toLowerCase().includes(i[0].trim())
-      if(estudiante){
-        return estudiante
+      let sede = row.sede.toLowerCase().includes(i[0].trim())
+      let carrera = row.carrera.toLowerCase().includes(i[0].trim())
+      let fecha = row.fecha.toLowerCase().includes(i[0].trim())
+      if(nombre){
+        return nombre
       }else if(titulo){
         return titulo
-      }else if(año){
-        return año
+      }else if(sede){
+        return sede
+      }else if(fecha){
+        return fecha
       }else{
-        return estado
+        return carrera
       }       
       })
       newData2 = data.filter(row =>{
-      let estudiante = row.estudiante.toLowerCase().includes(i[1].trim())
+      let nombre = row.nombre.toLowerCase().includes(i[1].trim())
       let titulo = row.titulo.toLowerCase().includes(i[1].trim())
-      let año = row.año.toLowerCase().includes(i[1].trim())
-      let estado = row.estado.toLowerCase().includes(i[1].trim())
+      let sede = row.sede.toLowerCase().includes(i[1].trim())
+      let carrera = row.carrera.toLowerCase().includes(i[1].trim())
+      let fecha = row.fecha.toLowerCase().includes(i[1].trim())
 
-      if(estudiante){
-        return estudiante
+      if(nombre){
+        return nombre
       }else if(titulo){
         return titulo
-      }else if(año){
-        return año
+      }else if(sede){
+        return sede
+      }else if(fecha){
+        return fecha
       }else{
-        return estado
+        return carrera
       }       
     })  
 
     arr = newData.concat(newData2)
     let interseccion =  (array) => {
       let duplicate_elements = []
-      for (num in arr) {
-          for (num2 in arr) {
+      for (num in array) {
+          for (num2 in array) {
               if (num === num2) {
                   continue;
               }
               else {
-                  if (arr[num] === arr[num2]) {
-                      duplicate_elements.push(arr[num]);
+                  if (array[num] === array[num2]) {
+                      duplicate_elements.push(array[num]);
                   }
               }
           }
@@ -132,8 +163,8 @@ export default function Home() {
       return [...new Set(duplicate_elements)];
   }
   newData=interseccion(arr)
-  console.log(newData)
     }
+    
     setRecords(newData)
   }
   
@@ -142,9 +173,8 @@ export default function Home() {
     <div className='block'>  
       <div className='mt-10 m-auto flex w-[90%] justify-between'>     
         <input 
-        className='w-[80%] border-2 border-gray-600 rounded-2xl p-2  shadow-sm ' placeholder='Buscar...' 
-        onChange={handleFilter}/>
-        <button className='end-0 w-[15%] p-2 bg-my-green text-white rounded-lg '>Publicar Tesis</button>      
+        className='w-[100%] border-2 border-gray-600 rounded-2xl p-2  shadow-sm ' placeholder='Buscar...' 
+        onChange={handleFilter}/>     
       </div>
       <div className='mt-10 mx-auto w-[90%]'>        
         <Tabla headers={headers} data={records}/>
