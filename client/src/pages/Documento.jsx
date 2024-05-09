@@ -71,6 +71,7 @@ function Documento() {
         <main className='w-[90vw] flex flex-col m-auto mt-4'>
             <section className='w-full flex flex-row justify-between'>
                 <div className='flex flex-row'>
+                    <FormatButton setFormat={setFormat} typeFormat='title' activeButton={format}>C</FormatButton>
                     <FormatButton setFormat={setFormat} typeFormat='title' activeButton={format}>T</FormatButton>
                     <FormatButton setFormat={setFormat} typeFormat='title2' activeButton={format}>T2</FormatButton>
                     <FormatButton setFormat={setFormat} typeFormat='title3' activeButton={format}>T3</FormatButton>

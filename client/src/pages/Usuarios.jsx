@@ -2,46 +2,45 @@ import H2 from "../components/H2"
 import Tabla from "../components/Tabla"
 import StudentForm from "../components/StundentForm"
 import JDirectivaForm from "../components/JDirectivaForm"
+import Junta from "../components/Junta"
 
 export default function Usuarios() {
   const headers = [
     {
-      name:'Estudiante',
-      selector: row=>row.estudiante,
+      name:'ID Usuario',
+      selector: row=>row.id_usuario,
       sortable: true
     },
     {
-      name:'Titulo',
-      selector: row=>row.titulo,
+      name:'Sede',
+      selector: row=>row.sede,
       sortable: true
     },
     {
-      name:'Año',
-      selector: row=>row.año,
+      name:'Nombre',
+      selector: row=>row.nombre,
       sortable: true
     },
     
     {
-      name:'Estado',
-      selector: row=>row.estado,
+      name:'Carrera',
+      selector: row=>row.carrera,
       sortable: true
     }
   ]
 
   const data =[
     {
-      id:1,
-      estudiante: 'Juan Perez',
-      titulo:'Software',
-      año: '2020',
-      estado:'En revisión'
+      id_usuario:1,
+      sede: 'Juan Perez',
+      nombre:'Software',
+      carrera: '2020',
     },
     {
-      id:2,
-      estudiante: 'Sofia Gómez',
-      titulo:'Construcción',
-      año: '2018',
-      estado:'Finalizada'
+      id_usuario:2,
+      sede: 'Sofia Gómez',
+      nombre:'Construcción',
+      carrera: '2018',
     }
   ]
 
@@ -66,7 +65,8 @@ export default function Usuarios() {
         <div className=' mx-auto w-[30%] border-2 border-gray-600 rounded-2xl p-4 shadow-xl'>
         <JDirectivaForm></JDirectivaForm>
         </div>
-        <div className=" mx-auto w-[60%]">
+        <div className=" mx-auto w-[60%] ">
+          <Junta></Junta>
         </div>
       </div>
     </div>

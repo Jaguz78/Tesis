@@ -51,7 +51,8 @@ export default function Home() {
       titulo:'Software',
       sede:'CUNOC',
       carrera:'Sistemas',
-      fecha:'2021'
+      fecha:'2021',
+      fecha_creacion:'Abril'
     },
     {
       id_tesis:2,
@@ -59,7 +60,8 @@ export default function Home() {
       titulo:'Construcción',
       sede:'CUNOR',
       carrera:'Civil',
-      fecha:'2018'
+      fecha:'2018',
+      fecha_creacion:'Mayo'
     },
     {
       id_tesis:3,
@@ -67,7 +69,8 @@ export default function Home() {
       titulo:'Software',
       sede:'CUNOR',
       carrera:'Sistemas',
-      fecha:'2021'
+      fecha:'2021',
+      fecha_creacion:'Enero'
     },
     {
       id_tesis:4,
@@ -75,7 +78,8 @@ export default function Home() {
       titulo:'Construcción',
       sede:'CENTRAL',
       carrera:'Medicina',
-      fecha:'2020'
+      fecha:'2020',
+      fecha_creacion:'Enero'
     }
 
   ]
@@ -93,6 +97,7 @@ export default function Home() {
     let sede = row.sede.toLowerCase().includes(i[0])
     let carrera = row.carrera.toLowerCase().includes(i[0])
     let fecha = row.fecha.toLowerCase().includes(i[0])
+    let fecha_creacion = row.fecha_creacion.toLowerCase().includes(i[0])
     
     if(nombre){
       return nombre
@@ -102,17 +107,21 @@ export default function Home() {
       return sede
     }else if(fecha){
       return fecha
+    }else if(fecha_creacion){
+      return fecha_creacion
     }else{
       return carrera
     }       
     })
   }else if(i.length>1){
+    console.log(i)
       newData = data.filter(row =>{
       let nombre = row.nombre.toLowerCase().includes(i[0].trim())
       let titulo = row.titulo.toLowerCase().includes(i[0].trim())
       let sede = row.sede.toLowerCase().includes(i[0].trim())
       let carrera = row.carrera.toLowerCase().includes(i[0].trim())
       let fecha = row.fecha.toLowerCase().includes(i[0].trim())
+      let fecha_creacion = row.fecha_creacion.toLowerCase().includes(i[0])
       if(nombre){
         return nombre
       }else if(titulo){
@@ -121,6 +130,8 @@ export default function Home() {
         return sede
       }else if(fecha){
         return fecha
+      }else if(fecha_creacion){
+        return fecha_creacion
       }else{
         return carrera
       }       
@@ -131,6 +142,7 @@ export default function Home() {
       let sede = row.sede.toLowerCase().includes(i[1].trim())
       let carrera = row.carrera.toLowerCase().includes(i[1].trim())
       let fecha = row.fecha.toLowerCase().includes(i[1].trim())
+      let fecha_creacion = row.fecha_creacion.toLowerCase().includes(i[1])
 
       if(nombre){
         return nombre
@@ -140,6 +152,8 @@ export default function Home() {
         return sede
       }else if(fecha){
         return fecha
+      }else if(fecha_creacion){
+        return fecha_creacion
       }else{
         return carrera
       }       
@@ -164,7 +178,7 @@ export default function Home() {
   }
   newData=interseccion(arr)
     }
-    
+    //console.log(newData)
     setRecords(newData)
   }
   
