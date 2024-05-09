@@ -1,7 +1,15 @@
 import React from 'react'
 import InputField from '../components/InputField'
+import {changePassword} from '../api/login.api'
 
 export default function CambiarContraseña() {
+
+  const handleClic = async (e) => {
+    e.preventDefault()
+    const res = await changePassword()
+    console.log(res)
+  }
+
   return (
     <div className='my-7 m-auto w-[30%] h-full border-2 border-gray-600 rounded-2xl p-4 shadow-xl flex' >
 
@@ -15,7 +23,7 @@ export default function CambiarContraseña() {
 
         <InputField id={'contraseñaNuevaRep'} type={'password'} name={'Repita su Contraseña'} placeholder={'Repita su contraseña...'} margin={'mb-5'}/>
         
-        <button 
+        <button onClick={handleClic}
         className='my-3 w-[100%] p-2 bg-my-green text-white rounded-lg '>Cambiar Contraseña</button> 
       </form>
       
