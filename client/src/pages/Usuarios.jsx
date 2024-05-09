@@ -59,7 +59,7 @@ export default function Usuarios() {
         </div>
       </div>
     </div>
-    
+
     <div className="mb-20 mt-10" >
       <H2 name={'Junta Directiva'} />
       <div className="flex justify-between ">

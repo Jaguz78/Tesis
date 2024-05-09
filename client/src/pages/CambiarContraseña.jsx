@@ -1,5 +1,4 @@
 import React from 'react'
-import {changePassword} from '../api/login.api'
 import ChangePassForm from '../components/ChangePassForm'
 
 export default function CambiarContraseña() {
